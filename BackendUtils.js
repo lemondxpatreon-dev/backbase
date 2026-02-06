@@ -418,8 +418,7 @@ class UserModel {
         "UserTimeRecords",
         "WebGLRealMoneyOffers",
         "WorkshopCustomThumbnails",
-        "XpRoad",
-        "TournamentX"
+        "XpRoad"
       ],
       googleId: platformData.googleId || '',
       facebookId: platformData.facebookId || '',
@@ -786,42 +785,38 @@ class UserController {
     }
   }
 
-static async getConfig(req, res) {
-  try {
-    const config = {
-      _SharedVersion: 2,
-      Versions: {
-        AndroidLastVersionAvailable: 0.64,
-        SteamLastVersionAvailable: 0.64,
-        IOSLastVersionAvailable: 0.64
-      },
+  static async getConfig(req, res) {
+    try {
+      const config = {
+        _SharedVersion: 2,
+        Versions: {
+          AndroidLastVersionAvailable: 0.64,
+          SteamLastVersionAvailable: 0.64,
+          IOSLastVersionAvailable: 0.64
+        },
+        BattlePassRotation: SharedData.BattlePassRotation || [],
+        BattlePassesV3: SharedData.BattlePasses || [],
+        RoundLevels_v2: SharedData.RoundLevels_v2 || [],
+        Skins_v4: SharedData.Skins_v4 || [],
+        MissionObjectives: SharedData.MissionObjectives || [],
+        PurchasableItems: SharedData.PurchasableItems || [],
+        GameEvents: SharedData.GameEvents || [],
+        Animations: SharedData.Animations || [],
+        Animations_v2: SharedData.Animations_v2 || [],
+        AdSettings: SharedData.AdSettings || {},
+        AnalyticsSettings: SharedData.AnalyticsSettings || {},
+        BackendUrl: SharedData.BackendUrl || "",
+        BattlePass: SharedData.BattlePass || {},
+        ActionEmotes: SharedData.ActionEmotes || {},
+        RankedPlaySettings: SharedData.RankedPlaySettings || {}
+      };
 
-      // Android 0.64 liest FeatureFlags HIER
-      FeatureFlags: SharedData.FeatureFlags || [],
-
-      BattlePassRotation: SharedData.BattlePassRotation || [],
-      BattlePassesV3: SharedData.BattlePasses || [],
-      RoundLevels_v2: SharedData.RoundLevels_v2 || [],
-      Skins_v4: SharedData.Skins_v4 || [],
-      MissionObjectives: SharedData.MissionObjectives || [],
-      PurchasableItems: SharedData.PurchasableItems || [],
-      GameEvents: SharedData.GameEvents || [],
-      Animations: SharedData.Animations || [],
-      Animations_v2: SharedData.Animations_v2 || [],
-      AdSettings: SharedData.AdSettings || {},
-      AnalyticsSettings: SharedData.AnalyticsSettings || {},
-      BackendUrl: SharedData.BackendUrl || "",
-      BattlePass: SharedData.BattlePass || {},
-      ActionEmotes: SharedData.ActionEmotes || {},
-      RankedPlaySettings: SharedData.RankedPlaySettings || {}
-    };
-
-    res.json(config);
-  } catch (err) {
-    Console.error('Config', 'Error:', err);
-    res.status(500).json({ message: 'Internal server error' });
+      res.json(config);
+    } catch (err) {
+      Console.error('Config', 'Error:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    }
   }
-}
 
 static async updateUsername(req, res) {
   try {
@@ -2041,11 +2036,11 @@ class TournamentXController {
       id: 1,
       type: 1,
       isEnabled: true,
-      minVersion: "0.64",
+      minVersion: "0.56",
       startTime: new Date(),
       endTime: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
       nameKey: "BD 1v1",
-      descriptionKey: "Practice your skills in the Stumble Base TournamentX! mode!",
+      descriptionKey: "Practice your skills in the Stumble Beast TournamentX! mode!",
       listItemBackgroundImage: "SharkTanic_Background_Image_Tournaments_Card",
       detailsPanelBackgroundImage: "SharkTanic_Background_Image_Tournaments",
       prizeBannerColour: "#005577",
@@ -2095,11 +2090,11 @@ class TournamentXController {
       id: 2,
       type: 1,
       isEnabled: true,
-      minVersion: "0.64",
+      minVersion: "0.56",
       startTime: new Date(),
       endTime: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
       nameKey: "Laser 1v1",
-      descriptionKey: "Practice your skills in the Stumble Base TournamentX! mode!",
+      descriptionKey: "Practice your skills in the Stumble Beast TournamentX! mode!",
       listItemBackgroundImage: "AbductedAvenue_Background_Image_Tournaments_Card",
       detailsPanelBackgroundImage: "Barbie_Background_Image_Tournaments",
       prizeBannerColour: "#33ffaaff",
