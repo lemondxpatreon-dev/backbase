@@ -791,6 +791,7 @@ class UserController {
       const config = {
         _SharedVersion: 2,
         Versions: {
+          FeatureFlags: ["TournamentX"],
           AndroidLastVersionAvailable: 0.64,
           SteamLastVersionAvailable: 0.64,
           IOSLastVersionAvailable: 0.64
