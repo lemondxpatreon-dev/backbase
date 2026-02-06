@@ -419,7 +419,7 @@ class UserModel {
         "WebGLRealMoneyOffers",
         "WorkshopCustomThumbnails",
         "XpRoad",
-        "TournamentX",
+        "TournamentX"
       ],
       googleId: platformData.googleId || '',
       facebookId: platformData.facebookId || '',
