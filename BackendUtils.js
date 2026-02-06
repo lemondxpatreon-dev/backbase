@@ -786,39 +786,44 @@ class UserController {
     }
   }
 
-  static async getConfig(req, res) {
-    try {
-      const config = {
-        _SharedVersion: 2,
-        Versions: {
-          FeatureFlags: ["TournamentX"],
-          AndroidLastVersionAvailable: 0.64,
-          SteamLastVersionAvailable: 0.64,
-          IOSLastVersionAvailable: 0.64
-        },
-        BattlePassRotation: SharedData.BattlePassRotation || [],
-        BattlePassesV3: SharedData.BattlePasses || [],
-        RoundLevels_v2: SharedData.RoundLevels_v2 || [],
-        Skins_v4: SharedData.Skins_v4 || [],
-        MissionObjectives: SharedData.MissionObjectives || [],
-        PurchasableItems: SharedData.PurchasableItems || [],
-        GameEvents: SharedData.GameEvents || [],
-        Animations: SharedData.Animations || [],
-        Animations_v2: SharedData.Animations_v2 || [],
-        AdSettings: SharedData.AdSettings || {},
-        AnalyticsSettings: SharedData.AnalyticsSettings || {},
-        BackendUrl: SharedData.BackendUrl || "",
-        BattlePass: SharedData.BattlePass || {},
-        ActionEmotes: SharedData.ActionEmotes || {},
-        RankedPlaySettings: SharedData.RankedPlaySettings || {}
-      };
+ static async getConfig(req, res) {
+  try {
+    const config = {
+      _SharedVersion: 2,
+      Versions: {
+        AndroidLastVersionAvailable: 0.64,
+        SteamLastVersionAvailable: 0.64,
+        IOSLastVersionAvailable: 0.64
+      },
 
-      res.json(config);
-    } catch (err) {
-      Console.error('Config', 'Error:', err);
-      res.status(500).json({ message: 'Internal server error' });
-    }
+      // 🔥 WICHTIG: 0.64 liest FeatureFlags NUR HIER
+      FeatureFlags: [
+        "TournamentX"
+      ],
+
+      BattlePassRotation: SharedData.BattlePassRotation || [],
+      BattlePassesV3: SharedData.BattlePasses || [],
+      RoundLevels_v2: SharedData.RoundLevels_v2 || [],
+      Skins_v4: SharedData.Skins_v4 || [],
+      MissionObjectives: SharedData.MissionObjectives || [],
+      PurchasableItems: SharedData.PurchasableItems || [],
+      GameEvents: SharedData.GameEvents || [],
+      Animations: SharedData.Animations || [],
+      Animations_v2: SharedData.Animations_v2 || [],
+      AdSettings: SharedData.AdSettings || {},
+      AnalyticsSettings: SharedData.AnalyticsSettings || {},
+      BackendUrl: SharedData.BackendUrl || "",
+      BattlePass: SharedData.BattlePass || {},
+      ActionEmotes: SharedData.ActionEmotes || {},
+      RankedPlaySettings: SharedData.RankedPlaySettings || {}
+    };
+
+    res.json(config);
+  } catch (err) {
+    Console.error('Config', 'Error:', err);
+    res.status(500).json({ message: 'Internal server error' });
   }
+}
 
 static async updateUsername(req, res) {
   try {
