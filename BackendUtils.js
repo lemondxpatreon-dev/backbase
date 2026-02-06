@@ -786,7 +786,7 @@ class UserController {
     }
   }
 
- static async getConfig(req, res) {
+static async getConfig(req, res) {
   try {
     const config = {
       _SharedVersion: 2,
@@ -796,10 +796,8 @@ class UserController {
         IOSLastVersionAvailable: 0.64
       },
 
-      // 🔥 WICHTIG: 0.64 liest FeatureFlags NUR HIER
-      FeatureFlags: [
-        "TournamentX"
-      ],
+      // Android 0.64 liest FeatureFlags HIER
+      FeatureFlags: SharedData.FeatureFlags || [],
 
       BattlePassRotation: SharedData.BattlePassRotation || [],
       BattlePassesV3: SharedData.BattlePasses || [],
