@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 public class BotIntegration
 {
     private static readonly HttpClient httpClient = new HttpClient();
-    private static string backendUrl = "http://seu-backend-url.com"; // Altere para o URL do seu backend
+    private static string backendUrl = "https://backbase-7e3r.onrender.com"; // Altere para o URL do seu backend
     private static string currentUserId = null;
     private static bool isRegistered = false;
 
@@ -189,3 +189,4 @@ public class YourMainClass : MelonLoader.MelonMod
         // ...
     }
 }
+
