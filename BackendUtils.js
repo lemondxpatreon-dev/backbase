@@ -419,6 +419,7 @@ class UserModel {
         "WebGLRealMoneyOffers",
         "WorkshopCustomThumbnails",
         "XpRoad"
+        "TourX",
       ],
       googleId: platformData.googleId || '',
       facebookId: platformData.facebookId || '',
