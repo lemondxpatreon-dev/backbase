@@ -6,6 +6,8 @@ const Console = require("./ConsoleUtils");
 const dotenv = require('dotenv');
 dotenv.config();
 const CryptoUtils = require("./CryptoUtils");
+const TournamentXController = require("./TournamentXController");
+
 
 const SharedUtils = require("./SharedUtils.js");
 const SharedData = require("./shared.json");
@@ -2036,11 +2038,11 @@ class TournamentXController {
       id: 1,
       type: 1,
       isEnabled: true,
-      minVersion: "0.56",
+      minVersion: "0.64",
       startTime: new Date(),
       endTime: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
       nameKey: "BD 1v1",
-      descriptionKey: "Practice your skills in the Stumble Beast TournamentX! mode!",
+      descriptionKey: "Practice your skills in the Stumble Base TournamentX! mode!",
       listItemBackgroundImage: "SharkTanic_Background_Image_Tournaments_Card",
       detailsPanelBackgroundImage: "SharkTanic_Background_Image_Tournaments",
       prizeBannerColour: "#005577",
@@ -2090,11 +2092,11 @@ class TournamentXController {
       id: 2,
       type: 1,
       isEnabled: true,
-      minVersion: "0.56",
+      minVersion: "0.64",
       startTime: new Date(),
       endTime: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
       nameKey: "Laser 1v1",
-      descriptionKey: "Practice your skills in the Stumble Beast TournamentX! mode!",
+      descriptionKey: "Practice your skills in the Stumble Base TournamentX! mode!",
       listItemBackgroundImage: "AbductedAvenue_Background_Image_Tournaments_Card",
       detailsPanelBackgroundImage: "Barbie_Background_Image_Tournaments",
       prizeBannerColour: "#33ffaaff",
