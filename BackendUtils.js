@@ -412,7 +412,7 @@ class UserModel {
         "SteamInventory",
         "TransferAppleIdAuthorization",
         "UsePhotonTicketsEvents",
-        "UsePhotonTicketsTournamentsX": true,
+        "UsePhotonTicketsTournamentsX",
         "UserConfiguration",
         "UserGeneratedContent",
         "UserTimeRecords",
